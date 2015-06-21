@@ -18,16 +18,20 @@ angular.module('tareasApp')
    		return $sce.trustAsResourceUrl(src);
     }
   	$scope.invalido = false;
+  	$scope.mostrar = false;
 
   	$scope.obtener = function (){
   		if(!angular.isNumber($scope.poste)){
   			$scope.invalido = true;
+  			$scope.mostrar = false;
   		} else{
   			if($scope.poste > 0 && $scope.poste < 99999){
   				$scope.invalido = false;
   				$scope.url = urlBase + $scope.poste;
+  				$scope.mostrar = true;
   			} else{
   				$scope.invalido = true;
+  				$scope.mostrar = false;
   			}
   		}
   	}
