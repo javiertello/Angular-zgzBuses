@@ -1,0 +1,12 @@
+   <div class="col-md-6 col-sm-6">
+    <h1>Horarios buses</h1>
+    <label>Introduce el numero de poste</label>
+    <input type="number" ng-model="poste"></input>
+    <button class="btn btn-danger" ng-click="obtener()">Obtener</button>
+    </br><span ng-show="invalido" style="color: red;">Poste invalido</span>
+   </div>
+   <div class="col-md-6 col-sm-6">
+      <br/>
+      <iframe ng-scrolling="yes" height="250px" width="325px"
+                ng-src="{{ trustSrc(url) }}"></iframe>
+   </div>
