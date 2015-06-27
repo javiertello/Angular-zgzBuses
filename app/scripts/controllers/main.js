@@ -8,7 +8,7 @@
  * Controller of the tareasApp
  */
 angular.module('tareasApp')
-  .controller('MainCtrl', function ($scope, $sce) {
+  .controller('MainCtrl', function ($scope, $sce, $http) {
   	var urlBase = 'http://www.urbanosdezaragoza.es/frm_esquemaparadatime.php?poste=';
   	
   	$scope.poste = null;
@@ -16,7 +16,7 @@ angular.module('tareasApp')
 
   	$scope.trustSrc = function(src) {
    		return $sce.trustAsResourceUrl(src);
-    }
+    };
   	$scope.invalido = false;
   	$scope.mostrar = false;
 
@@ -25,7 +25,7 @@ angular.module('tareasApp')
   			$scope.invalido = true;
   			$scope.mostrar = false;
   		} else{
-  			if($scope.poste > 0 && $scope.poste < 99999){
+  			if($scope.poste > 0 && $scope.poste < 9999){
   				$scope.invalido = false;
   				$scope.url = urlBase + $scope.poste;
   				$scope.mostrar = true;
@@ -34,5 +34,6 @@ angular.module('tareasApp')
   				$scope.mostrar = false;
   			}
   		}
-  	}
-  });
+  	};
+
+ 	});
